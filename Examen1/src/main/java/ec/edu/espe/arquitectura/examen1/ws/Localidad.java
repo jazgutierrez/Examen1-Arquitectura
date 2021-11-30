@@ -13,8 +13,14 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 /**
  * <p>Clase Java para localidad complex type.
  * 
@@ -47,7 +53,7 @@ public class Localidad {
     @XmlElement(name = "codigo_localidad", required = true)
     protected String codigoLocalidad;
     @XmlElement(required = true)
-    protected String disponibilidad;
+    protected Integer disponibilidad;
     @XmlElement(required = true)
     protected BigDecimal precio;
 
@@ -83,7 +89,7 @@ public class Localidad {
      *     {@link String }
      *     
      */
-    public String getDisponibilidad() {
+    public Integer getDisponibilidad() {
         return disponibilidad;
     }
 
@@ -95,7 +101,7 @@ public class Localidad {
      *     {@link String }
      *     
      */
-    public void setDisponibilidad(String value) {
+    public void setDisponibilidad(Integer value) {
         this.disponibilidad = value;
     }
 

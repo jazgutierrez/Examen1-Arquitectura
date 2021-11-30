@@ -35,7 +35,6 @@ public class PartidoFutbol implements Serializable {
     @Column(name = "equipo_visita")
     private String equipoVisita;
     @Column(name = "fecha")
-    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime fecha;
     @Column(name = "lugar")
     private String lugar;
@@ -73,11 +72,11 @@ public class PartidoFutbol implements Serializable {
         this.equipoVisita = equipoVisita;
     }
 
-    public Date getFecha() {
+    public LocalDateTime getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
 

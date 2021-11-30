@@ -16,11 +16,13 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import lombok.Data;
 
 /**
  *
  * @author yazbe
  */
+@Data
 @Entity
 @Table(name = "localidad_partido")
 public class LocalidadPartido implements Serializable {
@@ -29,7 +31,7 @@ public class LocalidadPartido implements Serializable {
     @EmbeddedId
     protected LocalidadPartidoPK localidadPartidoPK;
     @Column(name = "disponibilidad")
-    private BigInteger disponibilidad;
+    private Integer disponibilidad;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "precio")
     private BigDecimal precio;
@@ -57,11 +59,11 @@ public class LocalidadPartido implements Serializable {
         this.localidadPartidoPK = localidadPartidoPK;
     }
 
-    public BigInteger getDisponibilidad() {
+    public Integer getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(BigInteger disponibilidad) {
+    public void setDisponibilidad(Integer disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
 

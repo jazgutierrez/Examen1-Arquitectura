@@ -61,7 +61,7 @@
     <xs:complexType name="localidad">
         <xs:sequence>
             <xs:element name="codigo_localidad" type="xs:string"/>
-            <xs:element name="disponibilidad" type="xs:string"/>
+            <xs:element name="disponibilidad" type="xs:int"/>
             <xs:element name="precio" type="xs:decimal"/>
            
         </xs:sequence>

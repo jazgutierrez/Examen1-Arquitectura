@@ -4,6 +4,7 @@
  */
 package ec.edu.espe.arquitectura.examen1.dao;
 
+import ec.edu.espe.arquitectura.examen1.model.LocalidadPartido;
 import ec.edu.espe.arquitectura.examen1.model.LocalidadPartidoPK;
 import ec.edu.espe.arquitectura.examen1.ws.Localidad;
 import java.util.List;
@@ -13,6 +14,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author yazbe
  */
-public interface LocalidadRepository  extends JpaRepository<Localidad, LocalidadPartidoPK> {
-    List<Localidad> findByDisponibilidadGreaterThan(Integer numero);
+public interface LocalidadRepository  extends JpaRepository<LocalidadPartido, LocalidadPartidoPK> {
+    List<LocalidadPartido> findByLocalidadPartidoPKCodigoAndDisponibilidadGreaterThan(String codigo, Integer numero);
 }
