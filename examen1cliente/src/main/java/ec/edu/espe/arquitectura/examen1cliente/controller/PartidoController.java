@@ -4,7 +4,10 @@
  */
 package ec.edu.espe.arquitectura.examen1cliente.controller;
 
+import ec.edu.espe.arquitectura.examen1cliente.dto.PartidoRQ;
 import ec.edu.espe.arquitectura.examen1cliente.service.PartidoService;
+import ec.edu.espe.arquitectura.examen1cliente.wsdl.ComprarBoletoRequest;
+import ec.edu.espe.arquitectura.examen1cliente.wsdl.ComprarBoletoResponse;
 import ec.edu.espe.arquitectura.examen1cliente.wsdl.ListarLocalidadesDisponiblesRequest;
 import ec.edu.espe.arquitectura.examen1cliente.wsdl.ListarLocalidadesResponse;
 import ec.edu.espe.arquitectura.examen1cliente.wsdl.ObtenerPartidosDisponiblesRequest;
@@ -14,9 +17,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.HttpClientErrorException;
+
 
 @Slf4j
 @RestController
@@ -47,6 +52,17 @@ public class PartidoController {
         else{
             return ResponseEntity.badRequest().build();
         }
+    }
+    
+    @PostMapping(value = "")
+    public ResponseEntity comprarBoleto(PartidoRQ partidoRQ){
+        ComprarBoletoRequest request = new ComprarBoletoRequest();
+        request.setCodigoPartido(partidoRQ.getCodigoPartido());
+        request.setCodigoLocalidad(partidoRQ.getCodigoLocalidad());
+        ComprarBoletoResponse response=this.service.comprarBoleto(request);
+       
+        return ResponseEntity.ok(response);     
+        
     }
     
 }
