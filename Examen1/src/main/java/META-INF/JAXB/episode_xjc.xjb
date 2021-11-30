@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.2 
+Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2021.11.29 a las 08:19:16 PM COT 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://espe.edu.ec/arquitectura/examen1/ws">
+    <schemaBindings map="false">
+      <package name="ec.edu.espe.arquitectura.examen1.ws"/>
+    </schemaBindings>
+    <bindings scd="tns:obtenerPartidosDisponiblesRequest">
+      <class ref="ec.edu.espe.arquitectura.examen1.ws.ObtenerPartidosDisponiblesRequest"/>
+    </bindings>
+    <bindings scd="tns:obtenerPartidosDisponiblesResponse">
+      <class ref="ec.edu.espe.arquitectura.examen1.ws.ObtenerPartidosDisponiblesResponse"/>
+    </bindings>
+    <bindings scd="~tns:partido">
+      <class ref="ec.edu.espe.arquitectura.examen1.ws.Partido"/>
+    </bindings>
+    <bindings scd="tns:listarLocalidadesDisponiblesRequest">
+      <class ref="ec.edu.espe.arquitectura.examen1.ws.ListarLocalidadesDisponiblesRequest"/>
+    </bindings>
+    <bindings scd="tns:listarLocalidadesResponse">
+      <class ref="ec.edu.espe.arquitectura.examen1.ws.ListarLocalidadesResponse"/>
+    </bindings>
+    <bindings scd="~tns:localidad">
+      <class ref="ec.edu.espe.arquitectura.examen1.ws.Localidad"/>
+    </bindings>
+    <bindings scd="tns:comprarBoletoRequest">
+      <class ref="ec.edu.espe.arquitectura.examen1.ws.ComprarBoletoRequest"/>
+    </bindings>
+    <bindings scd="tns:comprarBoletoResponse">
+      <class ref="ec.edu.espe.arquitectura.examen1.ws.ComprarBoletoResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+

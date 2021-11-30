@@ -1,0 +1,70 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://espe.edu.ec/arquitectura/examen1/ws"
+           targetNamespace="http://espe.edu.ec/arquitectura/examen1/ws" elementFormDefault="qualified">
+
+   
+    <xs:element name="obtenerPartidosDisponiblesRequest">
+        <xs:complexType>
+        </xs:complexType>
+    </xs:element>
+   
+
+    <xs:element name="obtenerPartidosDisponiblesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="partido" type="tns:partido" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="listarLocalidadesDisponiblesRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="codigo" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="listarLocalidadesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="localidad" type="tns:localidad" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="comprarBoletoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="codigoPartido" type="xs:string"/>
+                <xs:element name="codigoLocalidad" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="comprarBoletoResponse">
+        <xs:complexType>
+            
+        </xs:complexType>
+    </xs:element>
+
+
+
+
+    <xs:complexType name="partido">
+        <xs:sequence>
+            <xs:element name="codigo" type="xs:string"/>
+            <xs:element name="equipo_local" type="xs:string"/>
+            <xs:element name="equipo_visita" type="xs:string"/>
+            <xs:element name="fecha" type="xs:dateTime"/>
+            <xs:element name="lugar" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="localidad">
+        <xs:sequence>
+            <xs:element name="codigo_localidad" type="xs:string"/>
+            <xs:element name="disponibilidad" type="xs:string"/>
+            <xs:element name="precio" type="xs:decimal"/>
+           
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
